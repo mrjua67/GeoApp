@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Países</title>
+</head>
+<body>
+    <h1>Países y Ciudades</h1>
+    <ul>
+        {% for pais in paises %}
+            <li>{{ pais.nombre }}
+                <ul>
+                    {% for ciudad in pais.ciudades.all %}
+                        <li>{{ ciudad.nombre }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
